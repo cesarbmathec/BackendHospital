@@ -20,12 +20,13 @@ from django.urls import path, include
 
 from rest_framework.authtoken.views import obtain_auth_token
 
-from .views import UserView
+from .views import UserView, UserRolesView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("historias_medicas/", include("historias_medicas.urls")),
     path("accounts/", include("allauth.urls")),
     path("api-token-auth/", obtain_auth_token),
-    path("user/", UserView.as_view(), name="user-list"),
+    path("register/", UserView.as_view(), name="user-list"),
+    path("user-roles/", UserRolesView.as_view(), name="user-roles"),
 ]
