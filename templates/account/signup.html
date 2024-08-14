@@ -1,5 +1,6 @@
 {% extends "account/base_entrance.html" %}
-{% load allauth i18n %}
+{% load allauth %}
+{% load i18n %}
 
 {% block head_title %}
     {% trans "Signup" %}
@@ -9,7 +10,7 @@
         {% trans "Sign Up" %}
     {% endelement %}
     <p>
-        {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+        {% blocktrans %}Si ya posee una cuenta? Entonces por favor <a href="{{ login_url }}">Inicia Sesión</a>.{% endblocktrans %}
     </p>
     {% url 'account_signup' as action_url %}
     {% element form form=form method="post" action=action_url tags="entrance,signup" %}
