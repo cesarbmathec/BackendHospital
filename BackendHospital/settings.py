@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-%2migxvvw=x$ey%ls(n1-7h27n3g6&1u@@*o8rgbjj0jcc%cws
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -92,7 +92,6 @@ SIMPLE_JWT = {
 # If this is used then `CORS_ALLOWED_ORIGINS` will not have any effect
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
-
 
 """
 CORS_ALLOWED_ORIGINS = [
@@ -177,7 +176,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "cesarbmath@gmail.com"
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_PASSWORD = "uxdp qdhh vbfu jniv"
 DEFAULT_FROM_EMAIL = "no-reply@hospital.com"
 
 
