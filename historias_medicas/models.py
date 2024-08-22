@@ -45,6 +45,15 @@ class HistoriaClinica(models.Model):
         )
 
 
+class Hospitalizacion(models.Model):
+    historia_clinica = models.ForeignKey(HistoriaClinica, on_delete=models.CASCADE)
+    fecha_ingreso = models.DateField()
+    fecha_salida = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return "Hospitalización desde {0}".format(self.fecha_ingreso)
+
+
 class Consulta(models.Model):
     historia_clinica = models.ForeignKey(HistoriaClinica, on_delete=models.CASCADE)
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)

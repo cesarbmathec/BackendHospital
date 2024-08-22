@@ -13,7 +13,14 @@ from .models import (
     Prescripcion,
 )
 
-from .serializers import PacienteSerializer
+from .serializers import (
+    PacienteSerializer,
+    HistoriaClinicaSerializer,
+    ConsultaSerializer,
+    MedicoSerializer,
+    MedicamentoSerializer,
+    PrescripcionSerializer,
+)
 
 
 def index(request):
@@ -30,3 +37,63 @@ class PacienteList(generics.ListCreateAPIView):
 class PacienteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Paciente.objects.all()
     serializer_class = PacienteSerializer
+
+
+@permission_classes([IsAuthenticated])
+class HistoriaClinicaList(generics.ListCreateAPIView):
+    queryset = HistoriaClinica.objects.all()
+    serializer_class = HistoriaClinicaSerializer
+
+
+@permission_classes([IsAuthenticated])
+class HistoriaClinicaDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = HistoriaClinica.objects.all()
+    serializer_class = HistoriaClinicaSerializer
+
+
+@permission_classes([IsAuthenticated])
+class ConsultaList(generics.ListCreateAPIView):
+    queryset = Consulta.objects.all()
+    serializer_class = ConsultaSerializer
+
+
+@permission_classes([IsAuthenticated])
+class ConsultaDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Consulta.objects.all()
+    serializer_class = ConsultaSerializer
+
+
+@permission_classes([IsAuthenticated])
+class MedicoList(generics.ListCreateAPIView):
+    queryset = Medico.objects.all()
+    serializer_class = MedicoSerializer
+
+
+@permission_classes([IsAuthenticated])
+class MedicoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Medico.objects.all()
+    serializer_class = MedicoSerializer
+
+
+@permission_classes([IsAuthenticated])
+class MedicamentoList(generics.ListCreateAPIView):
+    queryset = Medicamento.objects.all()
+    serializer_class = MedicamentoSerializer
+
+
+@permission_classes([IsAuthenticated])
+class MedicamentoDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Medicamento.objects.all()
+    serializer_class = MedicamentoSerializer
+
+
+@permission_classes([IsAuthenticated])
+class PrescripcionList(generics.ListCreateAPIView):
+    queryset = Prescripcion.objects.all()
+    serializer_class = PrescripcionSerializer
+
+
+@permission_classes([IsAuthenticated])
+class PrescripcionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Prescripcion.objects.all()
+    serializer_class = PrescripcionSerializer
