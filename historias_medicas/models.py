@@ -55,7 +55,7 @@ class Hospitalizacion(models.Model):
 
 
 class Consulta(models.Model):
-    historia_clinica = models.ForeignKey(HistoriaClinica, on_delete=models.CASCADE)
+    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
     fecha_consulta = models.DateField()
     diagnostico = models.TextField(blank=True, null=True)
